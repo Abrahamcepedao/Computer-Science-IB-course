@@ -1,0 +1,68 @@
+
+import java.util.Scanner;
+
+public class Class1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner myVar = new Scanner(System.in);
+		int x = myVar.nextInt();
+		
+		if(x < 42) {
+			System.out.println("Hi");
+		} else {
+			System.out.println("Welcome");
+		}
+		
+		
+		int edad = 30;
+		if (edad < 0) {
+			
+			if (edad < 16) {
+				System.out.println("Too young");
+			} else {
+				if (edad < 19) {
+					System.out.println("Still too young");
+				} else {
+					System.out.println("Perfect age");
+				}
+				
+			}
+		} else {
+			System.out.println("Impossible");
+		}
+		
+		
+		String day = "Monday";
+		int count = 3;
+		switch(count) {
+			case 1:{
+				day = "Monday";
+			}
+			case 2:{
+				day = "Tuesday";
+			}
+			case 3:{
+				day = "Wednesday";
+			}
+			case 4:{
+				day = "Thursday";
+			}
+			case 5:{
+				day = "Friday";
+			}
+			case 6:{
+				day = "Saturday";
+			}
+			case 7:{
+				day = "Sunday";
+			}
+
+		}	
+		System.out.println(day);
+		
+		
+	}
+	
+}

@@ -1,0 +1,74 @@
+import java.util.Scanner;
+public class Conversions {
+
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("How much money do you want to convert?");
+		double cash = input.nextDouble();
+		System.out.println("Which currency do you have?");
+		String x = input.nextLine();
+		String firstLetter = input.nextLine();
+		System.out.println("To which currency do you want to convert?");
+		String secondLetter = input.nextLine();
+		String pesos = "pesos";
+		String dollars = "dollars";
+		String euro = "euro";
+		if(firstLetter.charAt(0) == pesos.charAt(0)) {
+			if(secondLetter.charAt(0) == dollars.charAt(0)) {
+				System.out.println("The value in dollars is : " + getDollarPE(toDollarP,cash));
+			} else if(secondLetter.charAt(0) == euro.charAt(0)) {
+				System.out.println("The value in euros is : " + getEuroPE(toEuroP,cash));
+			} else {
+				System.out.println("enter a valid currency");
+			}
+		} else if(firstLetter.charAt(0) == dollars.charAt(0)) {
+			if(secondLetter.charAt(0) == pesos.charAt(0)) {
+				System.out.println("The value in pesos is : " + getPesoDO(toPesoD,cash));
+			} else if(secondLetter.charAt(0) == euro.charAt(0)) {
+				System.out.println("The value in euros is : " + getEuroDO(toEuroD,cash));
+			} else {
+				System.out.println("enter a valid currency");
+			}
+		}else if(firstLetter.charAt(0) == euro.charAt(0)) {
+			if(secondLetter.charAt(0) == dollars.charAt(0)) {
+				System.out.println("The value in dollars is : " + getDollarEU(toDollarE,cash));
+			} else if(secondLetter.charAt(0) == pesos.charAt(0)) {
+				System.out.println("The value in pesos is : " + getPesoEU(toPesoE,cash));
+			} else {
+				System.out.println("enter a valid currency");
+			}
+		} else {
+			System.out.println("enter a valid currency");
+		}
+	}
+	static double toPesoD = 19.09;
+	static double toPesoE = 0.044;
+	static double toDollarP = 0.052;
+	static double toDollarE = 0.855;
+	static double toEuroD = 1.169;
+	static double toEuroP = 22.325;
+	
+	static double getPesoDO(double toPesoD, double value) {
+		return value * toPesoD;
+	}
+	static double getPesoEU(double toPesoE, double value) {
+		return value / toPesoE;
+	}
+	static double getDollarPE(double toDollarP, double value) {
+		return value * toDollarP;
+	}
+	static double getDollarEU(double toDollarE, double value) {
+		return value / toDollarE;
+	}
+	static double getEuroDO(double toEuroD, double value) {
+		return value / toEuroD;
+	}
+	static double getEuroPE(double toEuroP, double value) {
+		return value / toEuroP;
+	}
+}
+

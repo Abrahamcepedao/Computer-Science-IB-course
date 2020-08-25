@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;DiceRoll.java&apos; to &apos;Hello World/src/(default package)&apos;&#x0A;- Original project: &apos;Hello World&apos;&#x0A;- Destination element: &apos;Hello World/src/(default package)&apos;&#x0A;- Original element: &apos;org.mechaevil.util.Conversions.DiceRoll.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;" element1="/src&lt;org.mechaevil.util.Conversions{DiceRoll.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1520802958332" units="1" version="1.0"/>
+</session>

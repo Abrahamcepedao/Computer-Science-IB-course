@@ -1,0 +1,18 @@
+habla(carlos,ruso).
+habla(ana,ingles).
+habla(roberto,ruso).
+habla(jean,ingles).
+habla(ana,ruso).
+
+hablacon(P1,P2) :- habla(P1,X), habla(P2,X), P1 \= P2.
+
+
+
+progenitor(clara,pedro).
+progenitor(pedro,jose).
+progenitor(ana,clara).
+progenitor(jose,clara).
+
+abuelos(X,Y):- progenitor(X,X2), progenitor(X2,Y).
+
+bisabuelos(X,Y):- progenitor(X,X2), progenitor(X2,X3), progenitor(X3,Y).

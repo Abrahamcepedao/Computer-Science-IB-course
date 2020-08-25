@@ -1,0 +1,65 @@
+package Model;
+import java.awt.*;
+import java.awt.event.*;
+
+// An AWT GUI program inherits the top-level container java.awt.Frame
+public class AWTCounter3But extends Frame {
+	private TextField tfCount;
+	private Button btnCountUp, btnCountDown, btnReset;
+	private int count = 100;
+
+
+// Constructor to setup the GUI components and event handlers
+	public AWTCounter3But () {
+		setLayout(new FlowLayout());
+		add(new Label("Quantity")); // an anonymous instance of Label
+	
+		tfCount = new TextField("100", 20);
+		tfCount.setEditable(false); // read-only
+		add(tfCount); // "super" Frame adds tfCount
+		
+		btnCountUp = new Button("CountUp");
+		add(btnCountUp);
+// Construct an anonymous instance of an anonymous inner class.
+// The source Button adds the anonymous instance as ActionEvent listener
+		btnCountUp.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent evt) {
+				count = count + 2;
+				tfCount.setText(count + "");
+			}
+		});
+
+		btnCountDown = new Button("CountDown");
+		add(btnCountDown);
+		btnCountDown.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent evt) {
+				count = count - 2;
+				tfCount.setText(count + "");
+			}
+		});
+	
+		btnReset = new Button("Reset");
+		add(btnReset);
+		btnReset.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent evt) {
+				count = 200;
+				tfCount.setText("200");
+			}
+		});
+
+		setTitle("Counter example");
+		setSize(400, 400);
+		setVisible(true);
+		setBackground(Color.cyan);
+	
+
+
+	}
+// The entry main method
+	public static void main(String[] args) {
+		new AWTCounter3But(); // Let the constructor do the job
+	}
+}

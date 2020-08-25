@@ -1,0 +1,82 @@
+
+import java.util.Scanner;
+
+public class Class1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner myVar = new Scanner(System.in);
+		int x = myVar.nextInt();
+		
+		if(x < 42) {
+			System.out.println("Hi");
+		} else {
+			System.out.println("Welcome");
+		}
+		
+		
+		int edad = 30;
+		if (edad > 0) {
+			
+			if (edad < 16) {
+				System.out.println("Too young");
+			} else {
+				if (edad < 19) {
+					System.out.println("Still too young");
+				} else {
+					System.out.println("Perfect age");
+				}
+				
+			}
+		} else {
+			System.out.println("Impossible");
+		}
+		
+		
+		String day = "Monday";
+		int count = 6;
+		switch(count) {
+			case 1:{
+				day = "Monday"; break;
+			}
+			case 2:{
+				day = "Tuesday"; break;
+			}
+			case 3:{
+				day = "Wednesday"; break;
+			}
+			case 4:{
+				day = "Thursday"; break;
+			}
+			case 5:{
+				day = "Friday"; break;
+			}
+			case 6:{
+				day = "Saturday"; break;
+			}
+			case 7:{
+				day = "Sunday"; break;
+			}
+
+		}	
+		System.out.println(day);
+		
+		System.out.println("Enter your age");
+		int age = myVar.nextInt();
+		if (age >= 18) {
+				System.out.println("Do you have an ID?");
+				String answer = myVar.nextLine();
+				if(answer == "yes") {
+				System.out.println("You can vote");
+			} else {
+				System.out.println("You need your ID to vote");
+			}
+		} else {
+			System.out.println("You are too young to vote");
+		}
+		
+		
+	}
+	
+}

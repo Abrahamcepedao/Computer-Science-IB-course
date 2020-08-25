@@ -1,0 +1,94 @@
+package Model;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class AWTControlDemo {
+	
+	private Frame mainFrame;
+	private Label headerLabel;
+	private Label statusLabel;
+	private Panel controlPanel;
+	protected int password;
+	
+	public AWTControlDemo(){
+		prepareGUI();
+	}
+	
+	public static void main(String[] args){
+		AWTControlDemo awtControlDemo = new AWTControlDemo();
+		awtControlDemo.showTextFieldDemo();
+	}
+	
+	private void prepareGUI(){
+		mainFrame = new Frame("Login System");
+		mainFrame.setSize(400,400);
+		mainFrame.setLayout(new GridLayout(4, 4));
+		mainFrame.setBackground(Color.white);
+		mainFrame.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent windowEvent){
+				System.exit(0);
+			} 
+	}); 
+		headerLabel = new Label();
+		headerLabel.setAlignment(Label.CENTER);
+		statusLabel = new Label(); 
+		statusLabel.setAlignment(Label.CENTER);
+		statusLabel.setSize(350,100);
+		
+		controlPanel = new Panel();
+		controlPanel.setLayout(new FlowLayout());
+		controlPanel.setBackground(Color.blue);
+		
+		mainFrame.add(headerLabel);
+		mainFrame.add(controlPanel);
+		mainFrame.add(statusLabel);
+		mainFrame.setVisible(true); 
+	}
+
+	private void showTextFieldDemo(){
+		headerLabel.setText("Control in action"); 
+		
+		Label idlabel= new Label("User ID: ", Label.RIGHT);
+		Label passwordLabel = new Label("Password: ", Label.CENTER);
+		Label nameLabel = new Label("First name: ", Label.CENTER);
+		Label lastNameLabel = new Label("Last name: ", Label.CENTER);
+		TextField userText = new TextField(16);
+		TextField passwordText = new TextField(6);
+		TextField firstNameText = new TextField(16);
+		TextField lastNameText = new TextField(16);
+		passwordText.setEchoChar('?');
+		
+		Button loginButton = new Button("Login");
+	
+		loginButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) { 
+				password = Integer.parseInt(passwordText.getText());
+				String data = "Username: " + userText.getText();
+				data += ", Password: " + passwordText.getText();
+				data += ", Name: " + firstNameText.getText();
+				data += ", Name: " + lastNameText.getText();
+				
+				if (passwordText.getText().equals("3333")) {
+					data += ", Correct you can enter";
+				} 
+				else { 
+					data += ", Sorry you cannnot enter";
+				}
+				statusLabel.setText(data); 
+				}
+		}); 
+	
+		controlPanel.add(idlabel);
+		controlPanel.add(userText);
+		controlPanel.add(passwordLabel); 
+		controlPanel.add(passwordText);
+		controlPanel.add(nameLabel);
+		controlPanel.add(firstNameText);
+		controlPanel.add(lastNameLabel);
+		controlPanel.add(lastNameText);
+		controlPanel.add(loginButton);
+		mainFrame.setVisible(true);
+	}
+}	

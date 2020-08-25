@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Project1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner myVar = new Scanner(System.in);
+		
+		
+		
+		
+		
+		int count = 0;
+		while(count <= 5) {
+			count = count++;
+			System.out.println("Enter the first number");
+			int a = myVar.nextInt();
+			System.out.println("Enter the second number");
+			int b = myVar.nextInt();
+			int sum = a + b;
+			if (sum <= 21) {
+				System.out.println("The sum of your cards is: " + sum);
+			} else if(a == 11) {
+				a = 1;
+				System.out.println("Enter a third number");
+				int c = myVar.nextInt();
+				sum = a + b + c;
+				System.out.println("The sum of your cards is: " + sum);
+			} else {
+				b = 1;
+				System.out.println("Enter a third number");
+				int c = myVar.nextInt();
+				sum = a + b + c;
+				System.out.println("The sum of your cards is: " + sum);
+			}
+			
+		} 
+	}
+
+}
